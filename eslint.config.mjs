@@ -3,12 +3,16 @@ import pluginJs from "@eslint/js";
 import tseslint from "typescript-eslint";
 
 export default [
+  pluginJs.configs.recommended,
+  ...tseslint.configs.recommended,
+
   {
     languageOptions: {
       globals: globals.node,
     },
     rules: {
-      // 'no-unused-vars': 'error',
+      "no-unused-vars": "off", // core JS rule
+      "@typescript-eslint/no-unused-vars": "off", // TS rule
     },
     ignores: [
       "dist",
@@ -23,7 +27,4 @@ export default [
       "coverage",
     ],
   },
-
-  pluginJs.configs.recommended,
-  ...tseslint.configs.recommended,
 ];

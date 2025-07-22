@@ -1,7 +1,7 @@
-import app from "./src/app";
+import app from "./app";
 import config from "config";
-import logger from "./src/config/logger";
-import connectDB from "./src/config/db";
+import logger from "./config/logger";
+import connectDB from "./config/db";
 
 const startServer = async () => {
   const PORT = config.get("server.port") || 5503;
